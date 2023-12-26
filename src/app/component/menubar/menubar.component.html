@@ -1,0 +1,91 @@
+<mat-toolbar color="primary" class="mat-elevation-z8">
+  <button mat-icon-button (click)="drawer.toggle()">
+    <mat-icon class="mat-18">menu</mat-icon>
+  </button>
+  <span>Reliable Engineering Pvt. Ltd.</span>
+  <span class="example-spacer"></span>
+    <button mat-button routerLink="">Home</button>
+    <button mat-button [matMenuTriggerFor]="lvl1master">Master</button>
+    <mat-menu #lvl1master="matMenu">
+      <button mat-menu-item [matMenuTriggerFor]="company">Company</button>
+      <button mat-menu-item [matMenuTriggerFor]="customer">Customer</button>
+      <button mat-menu-item [matMenuTriggerFor]="product">Product</button>
+      <button mat-menu-item [matMenuTriggerFor]="employee">Employee</button>
+    </mat-menu>
+
+    <mat-menu #company="matMenu">
+      <button mat-menu-item>Term</button>
+      <button mat-menu-item>Tax</button>
+      <button mat-menu-item>Currency</button>
+    </mat-menu>
+    <mat-menu #customer="matMenu">
+      <button mat-menu-item>Customer Type</button>
+      <button mat-menu-item>Tax</button>
+    </mat-menu>
+    <mat-menu #product="matMenu">
+      <button mat-menu-item>Category</button>
+      <button mat-menu-item [matMenuTriggerFor]="variant">Variant</button>
+      <button mat-menu-item>UOM</button>
+    </mat-menu>
+    <mat-menu #employee="matMenu">
+      <button mat-menu-item routerLink="employee">List</button>
+      <button mat-menu-item>Details</button>
+    </mat-menu>
+
+    <mat-menu #variant="matMenu">
+      <button mat-menu-item>Color</button>
+      <button mat-menu-item>Size</button>
+    </mat-menu>
+
+    <button mat-button routerLink="input">Input</button>
+    <button mat-button routerLink="autocomplete">Autocomplete</button>
+    <button mat-raised-button color="accent">Sign Up</button>
+    <button mat-icon-button (click)="badgeVisibility()">
+      <mat-icon class="mat-18" [matBadgeHidden]="badgeVisible" matBadgeColor="accent" matBadge="15" matBadgeSize="small">notifications</mat-icon>
+    </button>
+</mat-toolbar>
+
+<mat-drawer-container autosize>
+  <mat-drawer #drawer opened="false" mode="side" position="start">
+    <mat-nav-list>
+      <mat-list-item>
+        <button mat-button routerLink="card">
+          <mat-icon class="mat-18">dashboard</mat-icon>  Dashboard
+        </button>
+      </mat-list-item>
+
+      <mat-list-item>
+        <button mat-button>
+          <mat-icon class="mat-18">home</mat-icon>  Home
+        </button>
+      </mat-list-item>
+
+      <mat-list-item>
+        <button mat-button>
+          <mat-icon class="mat-18">settings</mat-icon>  Settings
+        </button>
+      </mat-list-item>
+
+      <mat-list-item>
+        <button mat-button>
+          <mat-icon class="mat-18">help</mat-icon>  Help
+        </button>
+      </mat-list-item>
+
+      <mat-list-item>
+        <button mat-button routerLink="chart">
+          <mat-icon class="mat-18">analytics</mat-icon>  Analytics
+        </button>
+      </mat-list-item>
+    </mat-nav-list>
+
+  </mat-drawer>
+
+  <mat-drawer-content>
+    <div style="text-align: center; min-height: 600px;">
+      <router-outlet></router-outlet>
+    </div>
+
+  </mat-drawer-content>
+</mat-drawer-container>
+

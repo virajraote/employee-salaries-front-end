@@ -1,0 +1,39 @@
+<form [formGroup]="myForm" (ngSubmit)="saveEmployee()">
+  <h1 mat-dialog-title>{{inputData.title}}</h1>
+  <div mat-dialog-content>
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input formControlName="name" matInput>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Department</mat-label>
+      <input formControlName="department" matInput>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Age</mat-label>
+      <input formControlName="age" matInput>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Work Days</mat-label>
+      <input formControlName="workDays" matInput>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Salary per Day</mat-label>
+      <input formControlName="salaryPerDay" matInput>
+    </mat-form-field>
+
+
+  </div>
+
+  <div mat-dialog-actions>
+    <button mat-raised-button color="primary">Save</button>
+    <button mat-raised-button color="warn" (click)="closePopup()">Close</button>
+    <!-- <button mat-raised-button [mat-dialog-close]="closeMessage" color="accent">Cancel</button> -->
+
+  </div>
+</form>
+

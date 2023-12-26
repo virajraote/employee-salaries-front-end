@@ -1,0 +1,11 @@
+<h1 mat-dialog-title>{{ inputData.title }}</h1>
+<div mat-dialog-content></div>
+  <h2>Name : <b>{{employeeData?.name}}</b></h2>
+  <h2>Department : <b>{{employeeData?.department}}</b></h2>
+  <h2>Age : <b>{{employeeData?.age}}</b></h2>
+  <h2>Work Days : <b>{{employeeData?.workDays}}</b></h2>
+  <h2>Salary per Day : <b>{{employeeData?.salaryPerDay}}</b></h2>
+  <h2>Salary per Month : <b>{{employeeData?.salaryPerMonth}}</b></h2>
+<div mat-dialog-actions>
+  <button mat-raised-button color="warn" (click)="closePopup()">Close</button>
+</div>
